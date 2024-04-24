@@ -1,0 +1,24 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Monto</th>
+      <th scope="col" class="bg-light">Monto con tipo de cambio</th>
+      <th scope="col">Moneda origen</th>
+      <th scope="col">Moneda destino</th>
+      <th scope="col">Tipo de cambio</th>
+      <th scope="col">Fecha consulta</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (item of data; track $index) {
+      <tr>
+        <td>{{item.monto}}</td>
+        <td class="bg-light">{{item.montoTipoCambio}}</td>
+        <td>{{item.monedaOrigen}}</td>
+        <td>{{item.monedaDestino}}</td>
+        <td>{{item.tipoCambio}}</td>
+        <td>{{fechaLocal(item.fechaCambio) | date:"dd/MM/yyyy HH:mm:ss aa"}}</td>
+      </tr>
+    }
+  </tbody>
+</table>

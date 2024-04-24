@@ -1,0 +1,55 @@
+<div class="card m-auto mb-3" style="max-width: 600px;">
+  <form [formGroup]="form" class="card-body" (ngSubmit)="onConsultar()">
+    <h5 class="card-title mb-3">Consultar tipo de cambio</h5>
+    <div class="row mb-3">
+      <div class="col-4">
+        <label for="exampleFormControlInput1" class="form-label">Monto</label>
+        <input formControlName="monto" type="number" class="form-control" placeholder="Ej. 10.00" required/>
+      </div>
+      <div class="col-4">
+        <label for="exampleFormControlTextarea1" class="form-label">Moneda origen</label>
+        <input formControlName="monedaOrigen" type="text" class="form-control" placeholder="Ej. PEN" required/>
+      </div>
+      <div class="col-4">
+        <label for="exampleFormControlTextarea1" class="form-label">Moneda destino</label>
+        <input formControlName="monedaDestino" type="text" class="form-control" placeholder="Ej. USD" required/>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <button type="button" class="btn btn-success w-100" (click)="onGenerarToken()">Generar token</button>
+      </div>
+      <div class="col-6">
+        <button type="submit" class="btn btn-primary w-100">Consultar</button>
+      </div>
+    </div>
+  </form>
+</div>
+<div class="card m-auto" style="max-width: 600px;">
+  <div class="card-body">
+    <table class="table">
+      <tbody>
+        <tr>
+          <th>Monto:</th>
+          <td align="right">{{data?.monto}}</td>
+        </tr>
+        <tr>
+          <th>Monto con tipo de cambio:</th>
+          <td align="right">{{data?.montoTipoCambio}}</td>
+        </tr>
+        <tr>
+          <th>Moneda origen:</th>
+          <td align="right">{{data?.monedaOrigen}}</td>
+        </tr>
+        <tr>
+          <th>Moneda destino:</th>
+          <td align="right">{{data?.monedaDestino}}</td>
+        </tr>
+        <tr>
+          <th>Tipo de cambio:</th>
+          <td align="right">{{data?.tipoCambio}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
